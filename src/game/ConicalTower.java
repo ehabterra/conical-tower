@@ -3,7 +3,7 @@ package game;
 import java.util.AbstractMap;
 import java.util.Stack;
 
-public class RingTower {
+public class ConicalTower {
     private final int Levels;
     private final Ring[] Rings;
     private final Stack<AbstractMap.SimpleEntry<Integer, Ring>> StackedRings;
@@ -13,7 +13,7 @@ public class RingTower {
         return Levels;
     }
 
-    public RingTower(int levels) {
+    public ConicalTower(int levels) {
         Levels = levels;
 
         StackedRings = new Stack<>();
@@ -68,8 +68,8 @@ public class RingTower {
                 ele = StackedRings.elementAt(eleIndex);
 
                 if (ele.getKey() - 1 == i) {
-                    result.append(" ".repeat(ele.getValue().Level - 1));
-                    result.append("|").append(":".repeat((Levels - ele.getValue().Level + 1) * 2)).append("|\n");
+                    result.append(" ".repeat(ele.getValue().getLevel() - 1));
+                    result.append("|").append(":".repeat((Levels - ele.getValue().getLevel() + 1) * 2)).append("|\n");
                     eleIndex--;
 
                     continue;

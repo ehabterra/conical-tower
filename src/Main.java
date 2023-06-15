@@ -1,10 +1,10 @@
-import game.RingTower;
+import game.ConicalTower;
 
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        RingTower tower = new RingTower(6);
+        ConicalTower tower = new ConicalTower(6);
 
         System.out.println(tower.Draw());
 
