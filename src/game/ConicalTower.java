@@ -9,10 +9,6 @@ public class ConicalTower {
     private final Stack<AbstractMap.SimpleEntry<Integer, Ring>> StackedRings;
     private int FilledToLevel = -1;
 
-    public int getLevels() {
-        return Levels;
-    }
-
     public ConicalTower(int levels) {
         Levels = levels;
 
@@ -25,7 +21,11 @@ public class ConicalTower {
         }
     }
 
-    public void AddRing(int level) {
+    public int getLevels() {
+        return Levels;
+    }
+
+    public void addRing(int level) {
         if (level > Levels) {
             System.out.println("cannot find the specified level");
             return;
@@ -45,7 +45,7 @@ public class ConicalTower {
         StackedRings.push(new AbstractMap.SimpleEntry<>(FilledToLevel, Rings[level - 1]));
     }
 
-    public void RemoveLastRing() {
+    public void removeLastRing() {
         if (StackedRings.size() > 0) {
             StackedRings.pop();
 
@@ -57,7 +57,7 @@ public class ConicalTower {
         }
     }
 
-    public String Draw() {
+    public String draw() {
         StringBuilder result = new StringBuilder();
         var eleIndex = StackedRings.size() - 1;
 
